@@ -39,12 +39,12 @@ func TranslateErrorMessage(err error) map[string]string {
 	// Handle GORM errors
 	if err != nil {
 		// Cek jika error mengandung "Duplicate entry" (duplikasi data di database)
-		if strings.Contains(err.Error(), "duplicate entry") {
+		if strings.Contains(err.Error(), "Duplicate entry") {
 			if strings.Contains(err.Error(), "username") {
-				errorsMap["username"] = "Username already exists"
+				errorsMap["Username"] = "Username already exists"
 			}
 			if strings.Contains(err.Error(), "email") {
-				errorsMap["email"] = "Email already exists"
+				errorsMap["Email"] = "Email already exists"
 			}
 		} else if err == gorm.ErrRecordNotFound {
 
@@ -57,7 +57,7 @@ func TranslateErrorMessage(err error) map[string]string {
 }
 
 // IsduplicateEntryError checks if the error is a duplicate entry error
-func IsduplicateEntryError(err error) bool {
+func IsDuplicateEntryError(err error) bool {
 	// Cek apakah error mengandung pesan "duplicate entry
 	return err != nil && strings.Contains(err.Error(), "duplicate entry")
 }
