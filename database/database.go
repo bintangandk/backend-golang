@@ -32,8 +32,8 @@ func InitDB() {
 	}
 	fmt.Println("Database connected successfully")
 
-	// Otomatis Migrasi model User
-	err = DB.AutoMigrate(&models.User{})
+	// Otomatis Migrasi model
+	err = DB.AutoMigrate(&models.User{}, &models.Barang{}) // Migrasi models
 	if err != nil {
 		log.Fatal("Failed to migrate database:", err)
 	}
