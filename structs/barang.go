@@ -9,3 +9,15 @@ type BarangResponse struct {
 	CreatedAt string  `json:"created_at"`
 	UpdatedAt string  `json:"updated_at"`
 }
+
+type BarangCreateRequest struct {
+	Nama  string  `json:"nama" binding:"required"`
+	Harga float64 `json:"harga" binding:"required"`
+	Stok  int     `json:"stok" binding:"required"`
+}
+
+type BarangUpdateRequest struct {
+	Nama  string  `json:"nama" binding:"required"`
+	Harga float64 `json:"harga" binding:"required"`
+	Stok  int     `json:"stok" binding:"required"`
+}

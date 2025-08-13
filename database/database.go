@@ -17,7 +17,7 @@ func InitDB() {
 	dbUser := config.GetEnv("DB_USER", "root")
 	dbPass := config.GetEnv("DB_PASSWORD", "root")
 	dbHost := config.GetEnv("DB_HOST", "localhost")
-	dbPort := config.GetEnv("DB_PORT", "3306")
+	dbPort := config.GetEnv("DB_PORT", "8889")
 	dbName := config.GetEnv("DB_NAME", "db_golang")
 
 	// Format DSN untuk MySQL
